@@ -11,8 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.pan.fs.bean.User;
 import com.pan.fs.service.LoginService;
 
@@ -39,7 +37,7 @@ public class LoginController {
 	}
 
 	@RequestMapping("/home")
-	public String goToIndex(User user,Model model) {
+	public String goToIndex(User user, Model model) {
 		System.out.println("=========进入登录验证==========");
 		System.out.println(user.toString());
 		String msg = loginService.varifyLogin(user);
@@ -48,11 +46,11 @@ public class LoginController {
 			feedback = "登录失败！请检查账号名或者密码是否正确！！！";
 			model.addAttribute("msg", feedback);
 			return "views/login";
-		}else {
+		} else {
 			model.addAttribute("msg", feedback);
 			return "views/home";
 		}
-//		mv.setViewName("home");
+		//		mv.setViewName("home");
 
 	}
 
