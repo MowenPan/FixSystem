@@ -40,4 +40,18 @@ public class User {
     public void setLastLog(String lastLog) {
         this.lastLog = lastLog;
     }
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 * Title: toString
+	 * Description: TODO
+	 *
+	 * @return
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "User [uid=" + uid + ", logname=" + logname + ", password=" + password + ", lastLog=" + lastLog + "]";
+	}
+
 }

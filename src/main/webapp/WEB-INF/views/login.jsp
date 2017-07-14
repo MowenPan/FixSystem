@@ -36,17 +36,18 @@
             </div>
             <div class="center background row">
                 <div class="col-md-8 col-md-offset-2">
-                    <form class="form-horizontal">
+                    <form id="login_form" class="form-horizontal" action="${basePath}/home" method="post">
                         <div class="form-group">
                             <label for="lg_name" class="col-md-2 col-md-offset-2 control-label">登录名：</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" id="lg_name" placeholder="请输入账号" required>
+                                <input type="text" class="form-control" id="lg_name" name="logname" placeholder="请输入账号" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="lg_password" class="col-md-2 col-md-offset-2 control-label">密码：</label>
                             <div class="col-md-6">
-                                <input type="password" class="form-control" id="lg_password" placeholder="请输入密码" required>
+                                <input type="password" class="form-control" id="lg_password" name="password" placeholder="请输入密码" required>
+                            	<span id="errorMsg" class="help-block" style="color:red">${msg}</span>
                             </div>
                         </div>
                         <div class="form-group">
@@ -60,12 +61,23 @@
                         </div>
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-3">
-                                <button type="submit" class="btn btn-primary btn-block">登录</button>
+                                <button id="login" type="submit" class="btn btn-primary btn-block">登录</button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
+        <script type="text/javascript">
+        	/* $(function() {
+        		$("#errorMsg").text("");
+        	}); */
+
+        	/* $("#login").click(function(){
+        		$("#errorMsg").text("${msg}");
+    			$("#errorMsg").css("color","red");
+        	}); */
+
+        </script>
 	</body>
 </html>
