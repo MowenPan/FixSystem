@@ -80,7 +80,6 @@
 	<bean id="dataSourceTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
-
 	<!-- 开启基于注解的事务管理 -->
 	<aop:config>
 		<aop:pointcut expression="execution(* com.pan.fs.service..*(..))" id="txPoint"/>
